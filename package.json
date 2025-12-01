@@ -1,7 +1,7 @@
 {
-  "name": "dropdown",
+  "name": "dynamic-ui-components",
   "version": "1.0.0",
-  "description": "A custom JS module to create diligent dropdown menus.",
+  "description": "Custom JS modules to create diligent dynamic ui components.",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DiligentViking/dropdown.git"
+    "url": "git+https://github.com/DiligentViking/dynamic-ui-components.git"
   },
   "keywords": [],
   "author": "DiligentViking",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DiligentViking/dropdown/issues"
+    "url": "https://github.com/DiligentViking/dynamic-ui-components/issues"
   },
-  "homepage": "https://github.com/DiligentViking/dropdown#readme",
+  "homepage": "https://github.com/DiligentViking/dynamic-ui-components#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",
