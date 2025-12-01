@@ -1,7 +1,7 @@
 {
-  "name": "efficientus",
+  "name": "dropdown",
   "version": "1.0.0",
-  "description": "<h1 align=\"center\"> 📜 Efficientus 📜 <h1>",
+  "description": "A custom JS module to create diligent dropdown menus.",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DiligentViking/efficientus.git"
+    "url": "git+https://github.com/DiligentViking/dropdown.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "DiligentViking",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DiligentViking/efficientus/issues"
+    "url": "https://github.com/DiligentViking/dropdown/issues"
   },
-  "homepage": "https://github.com/DiligentViking/efficientus#readme",
+  "homepage": "https://github.com/DiligentViking/dropdown#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",

@@ -1,7 +1,3 @@
-<h1 align="center"> 📜 Efficientus 📜 <h1>
+A custom JS module to create diligent dropdown menus.
 
-<h3 align="center">“<i>Invenire viam efficientissimam</i> -- Find the most efficient way”</h3>
-
-___
-
-A TOP to-do list project.  I hope you find it an innovative and intuitive app to help you live/love your life.
+NOTE: Due to the ongoing NPM issues I am unable to run ```npm install``` and therefore cannot use webpack.
