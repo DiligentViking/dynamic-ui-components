@@ -1,8 +1,9 @@
-export function addCarouselBehavior(carouselContainer, carouselContent, options={gap, animationSpeed}) {
+export function addCarouselBehavior(carouselContainer, carouselContent, options={gap, animationSpeed, autoplayInterval}) {
   // Customization //
 
   carouselContent.style.gap = `${options.gap}px`;
   carouselContent.style.transition = `translate ${options.animationSpeed}s ease`;
+  let autoplay = setInterval(next, options.autoplayInterval * 1000);
 
   // Movement Calculations //
 
@@ -23,6 +24,8 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
     const placeToMoveTo = movePoints[slideIndex] * -1;
     carouselContent.style.translate = `${placeToMoveTo}px`;
     highlightCurrentNavdot();
+    clearInterval(autoplay);
+    autoplay = setInterval(next, options.autoplayInterval * 1000);
   }
 
   function prev() {
@@ -32,8 +35,8 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
   }
 
   function next() {
-    if (slideIndex === movePoints.length-1) return;
-    slideIndex++;
+    if (slideIndex === movePoints.length-1) slideIndex = 0;
+    else slideIndex++;
     moveSlideToPoint();
   }
 
