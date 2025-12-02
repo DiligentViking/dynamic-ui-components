@@ -19,20 +19,22 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
   }
   movePoints.pop();
 
-  function prev() {
-    if (slideIndex === 0) return;
-    slideIndex--;
+  function moveSlideToPoint() {
     const placeToMoveTo = movePoints[slideIndex] * -1;
     carouselContent.style.translate = `${placeToMoveTo}px`;
     highlightCurrentNavdot();
   }
 
+  function prev() {
+    if (slideIndex === 0) return;
+    slideIndex--;
+    moveSlideToPoint();
+  }
+
   function next() {
     if (slideIndex === movePoints.length-1) return;
     slideIndex++;
-    const placeToMoveTo = movePoints[slideIndex] * -1;
-    carouselContent.style.translate = `${placeToMoveTo}px`;
-    highlightCurrentNavdot();
+    moveSlideToPoint();
   }
 
   // Next/Prev Buttons //
@@ -71,18 +73,8 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
 
   carouselNavigationDots.addEventListener('click', (e) => {
     if (e.target.classList.contains('carousel-navdot')) {
-      const desiredSlideIndex = +e.target.dataset.slideindex;
-      const increment =
-        (slideIndex < desiredSlideIndex) ? next :
-        (slideIndex > desiredSlideIndex) ? prev :
-        null;
-      if (increment === null) return;
-      let firebreak = 0;
-      while (slideIndex !== desiredSlideIndex) {
-        increment();
-        console.log(firebreak++);
-        if (firebreak > 19) break;
-      }
+      slideIndex = +e.target.dataset.slideindex;
+      moveSlideToPoint();
     }
   });
 
