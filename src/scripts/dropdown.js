@@ -3,21 +3,18 @@ export function addDropdownBehavior(dropdownElem, dropdownList) {
   const elemPosition = dropdownElem.getBoundingClientRect();
   dropdownList.style.left = `${elemPosition.left}px`;
 
-  dropdownList.style.visibility = 'hidden';
+  dropdownList.classList.add('hide-dropdown-list');
 
   window.addEventListener('click', (e) => {
     switch (e.target) {
       case dropdownElem:
-        dropdownList.style.visibility =
-          (dropdownList.style.visibility === 'hidden')
-          ? 'visible'
-          : 'hidden';
+        dropdownList.classList.toggle('hide-dropdown-list');
         break;
       case dropdownList:
         break;
       default:
         if (dropdownList.contains(e.target)) break;
-        dropdownList.style.visibility = 'hidden';
+        dropdownList.classList.add('hide-dropdown-list');
         break;
     }
   });
