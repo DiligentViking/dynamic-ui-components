@@ -1,6 +1,10 @@
 export function addCarouselBehavior(carouselContainer, carouselContent, options={gap, animationSpeed}) {
+  // Customization //
+
   carouselContent.style.gap = `${options.gap}px`;
   carouselContent.style.transition = `translate ${options.animationSpeed}s ease`;
+
+  // Movement Calculations //
 
   let slideIndex = 0;
 
@@ -13,7 +17,7 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
     acc += spaceToMove;
     movePoints.push(acc);
   }
-  console.log(movePoints);
+  movePoints.pop();
 
   function prev() {
     if (slideIndex === 0) return;
@@ -29,8 +33,7 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
     carouselContent.style.translate = `${placeToMoveTo}px`;
   }
 
-  // next();  // Dev
-  // setInterval(next, 5000);
+  // Next/Prev Buttons //
 
   const carouselIncrementButtons = document.createElement('div');
   carouselIncrementButtons.classList.add('carousel-increment-buttons');
@@ -48,17 +51,7 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
 
   carouselPrev.onclick = prev;
   carouselNext.onclick = next;
+
+  // Navigation Dots //
+
 }
-
-
-/*
-
-0
--220
--440
--660
--880
--1100
--1320
-
-*/
