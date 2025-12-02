@@ -8,7 +8,8 @@
 /* Carousel */
 
 .carousel-container {
-  overflow-x: hidden;
+  overflow-x: clip;
+  position: relative;
 }
 
 .carousel-content {
@@ -18,4 +19,13 @@
 
 .carousel-content > .slide {
   flex-shrink: 0;
+}
+
+.carousel-increment-buttons {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -40px;
+  display: flex;
+  gap: 5px;
 }
