@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Efficientus</title>
+  <title>Dynamic UI Components</title>
   <link rel="stylesheet" href="./styles/index.css">  <!-- FIXME: Remove this once you can webpack again -->
   <script type="module" src="./scripts/index.js"></script>  <!-- FIXME: Remove this once you can webpack again -->
 </head>
@@ -18,8 +18,16 @@
   <li>relentless</li>
 </ul>
 <div style="margin-bottom: 200px"></div>
-<div class="carousel-container">
-  <div class="carousel-content"></div>
+<div class="carousel-container" style="outline: 2px solid aliceblue; padding: 20px; margin: auto; width: 80%">
+  <div class="carousel-content" style="outline: 2px solid rgb(135, 206, 235, 0.5); padding: 0px;">
+    <div class="slide" style="background-color: rgb(255, 0, 0); opacity: 0.75; width: 200px; height: 200px"></div>
+    <div class="slide" style="background-color: rgb(255, 165, 0); opacity: 0.75; width: 200px; height: 200px"></div>
+    <div class="slide" style="background-color: rgb(255, 255, 0); opacity: 0.75; width: 200px; height: 200px"></div>
+    <div class="slide" style="background-color: rgb(0, 128, 0); opacity: 0.75; width: 200px; height: 200px"></div>
+    <div class="slide" style="background-color: rgb(0, 0, 255); opacity: 0.75; width: 200px; height: 200px"></div>
+    <div class="slide" style="background-color: rgb(75, 0, 130); opacity: 0.75; width: 200px; height: 200px"></div>
+    <div class="slide" style="background-color: rgb(238, 130, 238); opacity: 0.75; width: 200px; height: 200px"></div>
+  </div>
 </div>
 </body>
 </html>

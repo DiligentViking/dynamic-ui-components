@@ -1,3 +1,21 @@
+/* Dropdown */
+
 .hide-dropdown-list {
   visibility: hidden;
+}
+
+
+/* Carousel */
+
+.carousel-container {
+  overflow-x: hidden;
+}
+
+.carousel-content {
+  display: flex;
+  width: fit-content;
+}
+
+.carousel-content > .slide {
+  flex-shrink: 0;
 }
