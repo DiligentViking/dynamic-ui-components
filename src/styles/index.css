@@ -29,3 +29,22 @@
   display: flex;
   gap: 5px;
 }
+
+.carousel-navigation-dots {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -40px;
+  display: flex;
+  gap: 2px;
+}
+
+.carousel-navdot {  /* consider wrapping each navdot in a container with padding for extra clickability */
+  padding: 4px;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-navdot.current-slide {
+  outline: 1px solid darkgreen;
+}

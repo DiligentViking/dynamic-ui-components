@@ -24,6 +24,7 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
     slideIndex--;
     const placeToMoveTo = movePoints[slideIndex] * -1;
     carouselContent.style.translate = `${placeToMoveTo}px`;
+    highlightCurrentNavdot();
   }
 
   function next() {
@@ -31,6 +32,7 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
     slideIndex++;
     const placeToMoveTo = movePoints[slideIndex] * -1;
     carouselContent.style.translate = `${placeToMoveTo}px`;
+    highlightCurrentNavdot();
   }
 
   // Next/Prev Buttons //
@@ -54,4 +56,40 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
 
   // Navigation Dots //
 
+  const carouselNavigationDots = document.createElement('div');
+  carouselNavigationDots.classList.add('carousel-navigation-dots');
+
+  for (let x = 0; x < movePoints.length; x++) {
+    const navDot = document.createElement('button');
+    navDot.classList.add('carousel-navdot');
+    navDot.dataset.slideindex = x;
+
+    carouselNavigationDots.appendChild(navDot);
+  }
+
+  carouselContainer.appendChild(carouselNavigationDots);
+
+  carouselNavigationDots.addEventListener('click', (e) => {
+    if (e.target.classList.contains('carousel-navdot')) {
+      const desiredSlideIndex = +e.target.dataset.slideindex;
+      const increment =
+        (slideIndex < desiredSlideIndex) ? next :
+        (slideIndex > desiredSlideIndex) ? prev :
+        null;
+      if (increment === null) return;
+      let firebreak = 0;
+      while (slideIndex !== desiredSlideIndex) {
+        increment();
+        console.log(firebreak++);
+        if (firebreak > 19) break;
+      }
+    }
+  });
+
+  highlightCurrentNavdot();
+
+  function highlightCurrentNavdot() {
+    carouselNavigationDots.querySelector('.carousel-navdot.current-slide')?.classList.remove('current-slide');
+    carouselNavigationDots.querySelector(`.carousel-navdot[data-slideindex="${slideIndex}"]`).classList.add('current-slide');
+  }
 }
