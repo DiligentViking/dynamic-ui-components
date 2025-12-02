@@ -29,8 +29,8 @@ export function addCarouselBehavior(carouselContainer, carouselContent, options=
   }
 
   function prev() {
-    if (slideIndex === 0) return;
-    slideIndex--;
+    if (slideIndex === 0) slideIndex = 0;
+    else slideIndex--;
     moveSlideToPoint();
   }
 
