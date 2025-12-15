@@ -1,4 +1,4 @@
-export function addCarouselBehavior(carouselContainer, carouselContent, options={gap, animationSpeed, autoplayInterval}) {
+export function addCarouselBehavior(carouselContainer, carouselContent, options={gap: null, animationSpeed: null, autoplayInterval: null}) {
   // Customization //
 
   carouselContent.style.gap = `${options.gap}px`;
