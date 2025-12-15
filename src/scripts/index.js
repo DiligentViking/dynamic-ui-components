@@ -1,3 +1,5 @@
+import '../styles/index.css';
+
 import { addDropdownBehavior } from './dropdown.js';
 import { addCarouselBehavior } from './carousel.js';
 
